@@ -1,3 +1,4 @@
-# rez-openvdb
+rez-openvdb
+===
 
-Rez build configuration for Ptex.
+Rez build configuration for OpenVDB.

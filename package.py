@@ -26,7 +26,8 @@ requires = [
     "ilmbase-2.2.1+<2.4",
     "openexr-2.2.1+<2.4",
     "python-2.7+<3",
-    "tbb-2017.U6+"
+    "tbb-2017.U6+",
+    "zlib-1.2+"
 ]
 
 variants = [

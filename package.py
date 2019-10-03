@@ -4,6 +4,9 @@ version = "5.2.0"
 
 authors = [
     "Ken Museth",
+    "Peter Cucka",
+    "Mihai Aldén",
+    "David Hill",
     "DreamWorks Animation"
 ]
 
@@ -15,16 +18,21 @@ description = \
     """
 
 requires = [
-    "gcc-6+",
-    "cmake-3+",
-    "python-2.7+<3",
     "blosc-1.5+",
     "boost-1.61",
+    "cmake-3+",
+    "gcc-6+",
+    "glfw-3+",
     "ilmbase-2.2.1+<2.4",
     "openexr-2.2.1+<2.4",
-    "tbb-2017.U6+",
-    "glew-2+",
-    "glfw-3+"
+    "python-2.7+<3",
+    "tbb-2017.U6+"
+]
+
+tools = [
+    "vdb_print",
+    "vdb_render",
+    "vdb_view"
 ]
 
 variants = [
@@ -40,8 +48,10 @@ uuid = "openvdb-{version}".format(version=str(version))
 
 def commands():
     env.PATH.prepend("{root}/bin")
-    env.LD_LIBRARY_PATH.prepend("{root}/lib64")
+    env.LD_LIBRARY_PATH.prepend("{root}/lib")
+    env.PYTHONPATH.prepend("{root}/lib/python2.7")
 
     # Helper environment variables.
+    env.OPENVDB_BINARY_PATH.set("{root}/bin")
     env.OPENVDB_INCLUDE_PATH.set("{root}/include")
-    env.OPENVDB_LIBRARY_PATH.set("{root}/lib64")
+    env.OPENVDB_LIBRARY_PATH.set("{root}/lib")

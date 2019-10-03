@@ -42,7 +42,8 @@ cd ${BUILD_PATH}
 sed "s|REQUIRED COMPONENTS python\${PYTHON_VERSION_MAJOR}.\${PYTHON_VERSION_MINOR}|OPTIONAL_COMPONENTS python python\${PYTHON_VERSION_MAJOR} python\${PYTHON_VERSION_MAJOR}.\${PYTHON_VERSION_MINOR}|1" --in-place ${BUILD_PATH}/../openvdb/python/CMakeLists.txt
 
 # We use the OpenVDB ABI 5, i.e. Houdini 17 and later. Maya should technically be compatible with any OpenVDB ABI.
-cmake ${BUILD_PATH}/.. \
+cmake \
+    ${BUILD_PATH}/.. \
     -DCMAKE_INSTALL_PREFIX=${INSTALL_PATH} \
     -DCMAKE_C_FLAGS=-fPIC \
     -DCMAKE_CXX_FLAGS=-fPIC \

@@ -29,14 +29,14 @@ requires = [
     "tbb-2017.U6+"
 ]
 
+variants = [
+    ["platform-linux"]
+]
+
 tools = [
     "vdb_print",
     "vdb_render",
     "vdb_view"
-]
-
-variants = [
-    ["platform-linux"]
 ]
 
 build_system = "cmake"

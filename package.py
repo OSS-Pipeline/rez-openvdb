@@ -50,7 +50,7 @@ uuid = "openvdb-{version}".format(version=str(version))
 def commands():
     env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
-    env.PYTHONPATH.prepend("{root}/lib/python2.7")
+    env.PYTHONPATH.prepend("{root}/lib/python" + str(env.REZ_PYTHON_MAJOR_VERSION) + "." + str(env.REZ_PYTHON_MINOR_VERSION))
 
     # Helper environment variables.
     env.OPENVDB_BINARY_PATH.set("{root}/bin")
